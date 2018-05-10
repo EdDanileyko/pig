@@ -1,4 +1,4 @@
-﻿var scores, roundScore, activePlayer, isActive;
+var scores, roundScore, activePlayer, isActive;
 
 
 reset();
@@ -11,7 +11,7 @@ function reset() {
     roundScore = 0;
     activePlayer = 0;
     isActive = true;
-
+    
     document.querySelector('.dice').style.display = 'none';
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
@@ -31,16 +31,16 @@ function turnover() {
     "use strict";
     // Switch the active player
     activePlayer === 0 ? activePlayer = 1 : activePlayer = 0;
-
+    
     // Reset the round score
     roundScore = 0;
     document.getElementById('current-0').textContent = roundScore;
     document.getElementById('current-1').textContent = roundScore;
-
+    
     // Toggles active class from active player
     document.querySelector('.player-0-panel').classList.toggle('active');
     document.querySelector('.player-1-panel').classList.toggle('active');
-
+    
 }
 
 document.querySelector('.btn-roll').addEventListener('click', function () {
@@ -77,7 +77,7 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
         // 3. Check if the game has been won or is there a turnover
         if (scores[activePlayer] >= 100) {
-            document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';/'
+            document.querySelector('#name-' + activePlayer).textContent = 'WINNER!';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
